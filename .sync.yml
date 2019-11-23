@@ -1,4 +1,0 @@
----
-.travis.yml:
-  beaker_sets:
-    - centos7-64
