@@ -46,3 +46,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Handle host header set via Apache
 USE_X_FORWARDED_HOST = True
+
+# Limit the HTTP Host header to what we know is secure
+ALLOWED_HOSTS = ['<%= scope['pulpcore::servername'] %>']
