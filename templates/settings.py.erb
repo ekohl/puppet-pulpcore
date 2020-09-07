@@ -43,3 +43,6 @@ ALLOWED_IMPORT_PATHS = <%= scope['pulpcore::allowed_import_path'] %>
 
 # Derive HTTP/HTTPS via the X-Forwarded-Proto header set by Apache
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Handle host header set via Apache
+USE_X_FORWARDED_HOST = True
