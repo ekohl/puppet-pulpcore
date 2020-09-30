@@ -1,0 +1,16 @@
+<%- | String[1] $version, String[1] $dist_code | -%>
+[pulpcore]
+name=Pulpcore <%= $version %>
+baseurl=https://yum.theforeman.org/pulpcore/<%= $version %>/<%= $dist_code %>/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.theforeman.org/pulpcore/<%= $version %>/GPG-RPM-KEY-pulpcore
+module_hotfixes=1
+
+[pulpcore-source]
+name=Pulpcore ${version} Soure
+baseurl=https://yum.theforeman.org/pulpcore/<%= $version %>/<%= $dist_code %>/source
+enabled=0
+gpgcheck=1
+gpgkey=https://yum.theforeman.org/pulpcore/<%= $version %>/GPG-RPM-KEY-pulpcore
+module_hotfixes=1
