@@ -25,8 +25,8 @@ USE_NEW_WORKER_TYPE = <%= scope['pulpcore::use_rq_tasking_system'] ? "False" : "
 
 <% if scope['pulpcore::worker_ttl'] -%>
 WORKER_TTL = <%= scope['pulpcore::worker_ttl'] %>
-<% end -%>
 
+<% end -%>
 MEDIA_ROOT = "<%= scope['pulpcore::media_root'] %>"
 STATIC_ROOT = "<%= scope['pulpcore::static_root'] %>"
 STATIC_URL = "<%= scope['pulpcore::static_url'] %>"

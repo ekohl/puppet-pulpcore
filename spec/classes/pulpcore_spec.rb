@@ -27,6 +27,7 @@ describe 'pulpcore' do
             .with_content(%r{REDIS_URL = "redis://localhost:6379/8"})
             .with_content(%r{CACHE_ENABLED = False})
             .without_content(%r{sslmode})
+            .without_content(%r{WORKER_TTL})
           is_expected.to contain_file('/etc/pulp')
           is_expected.to contain_file('/var/lib/pulp')
           is_expected.to contain_file('/var/lib/pulp/sync_imports')
@@ -523,7 +524,7 @@ CONTENT
 
         it do
           is_expected.to contain_concat__fragment('base')
-            .with_content(%r{\sWORKER_TTL = 60})
+            .with_content(%r{^WORKER_TTL = 60$})
         end
       end
     end

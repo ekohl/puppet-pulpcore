@@ -134,6 +134,7 @@
 #
 # @param worker_ttl
 #   The number of seconds before a pulpcore worker should be considered lost.
+#   If undefined, Pulp's built in default value is used which may be version dependent.
 #
 # @param use_rq_tasking_system
 #   Use the older RQ workers tasking system instead of the newer PostgreSQL tasking system introduced in Pulpcore 3.14.
