@@ -22,6 +22,7 @@ describe 'pulpcore::plugin::container' do
 
   <Location "/pulpcore_registry/v2/">
     RequestHeader unset REMOTE_USER
+    RequestHeader set REMOTE_USER "%{SSL_CLIENT_S_DN_CN}s" env=SSL_CLIENT_S_DN_CN
     ProxyPass unix:///run/pulpcore-api.sock|http://pulpcore-api/v2/
     ProxyPassReverse unix:///run/pulpcore-api.sock|http://pulpcore-api/v2/
   </Location>
